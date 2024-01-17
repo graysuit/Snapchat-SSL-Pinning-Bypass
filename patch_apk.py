@@ -223,7 +223,15 @@ def copy_script_temp(apk):
     f_dest.close()
     return dest
 
-
+def download_file(url):
+    get_response = requests.get(url,stream=True)
+    file_name  = url.split("/")[-1]
+    with open(file_name, 'wb') as f:
+        for chunk in get_response.iter_content(chunk_size=1024):
+            if chunk: # filter out keep-alive new chunks
+                f.write(chunk)
+    return file_name
+    
 def create_config_file():
     filepath = os.path.join(TEMP_FOLDER, "libgadget.config.so")
     config = {
@@ -252,7 +260,8 @@ def main():
                         help="Password for keystore", default="password")
 
     args = parser.parse_args()
-    inputfile = args.input
+    APK = "https://r2-static-assets.androidapksfree.com/sdata/27803efbc59a913dfa22a9432237705c/com.snapchat.android_v11.79.0.34-84609_Android-4.4.apk"
+    inputfile = download_file(APK)
     outputfile = args.output
     keyalias = args.keyalias
     storepass = args.storepass
