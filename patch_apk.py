@@ -248,8 +248,6 @@ def create_config_file():
 def main():
     parser = argparse.ArgumentParser(
         description='Remove ssl pining from snapchat app')
-    parser.add_argument("-i", "--input", type=str,
-                        help="Input apk file.", required=True)
     parser.add_argument("-o", "--output", type=str,
                         help="Output apk file.", default=DEFAULT_OUTPUT_NAME)
     parser.add_argument("--keystore", type=str,
