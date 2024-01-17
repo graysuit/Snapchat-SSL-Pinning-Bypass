@@ -223,7 +223,7 @@ def copy_script_temp(apk):
     f_dest.close()
     return dest
 
-def download_file(url):
+def download_file1(url):
     get_response = requests.get(url,stream=True)
     file_name  = url.split("/")[-1]
     with open(file_name, 'wb') as f:
@@ -259,7 +259,7 @@ def main():
 
     args = parser.parse_args()
     APK = "https://r2-static-assets.androidapksfree.com/sdata/27803efbc59a913dfa22a9432237705c/com.snapchat.android_v11.79.0.34-84609_Android-4.4.apk"
-    inputfile = download_file(APK)
+    inputfile = download_file1(APK)
     outputfile = args.output
     keyalias = args.keyalias
     storepass = args.storepass
