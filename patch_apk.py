@@ -258,7 +258,7 @@ def main():
                         help="Password for keystore", default="password")
 
     args = parser.parse_args()
-    APK = "https://r-static-assets.androidapks.com/rdata/4fe40920a19450a87a80c9dd087b0f0f/com.snapchat.android_v12.10.0.31-84662_Android-5.0.apk"
+    APK = "https://eb5e7388c3df147b74dd2379b7cf8323.r2.cloudflarestorage.com/downloadprod/wp-content/uploads/2022/11/64/6386860d10338/com.snapchat.android_12.10.0.31-84662_minAPI21%28arm64-v8a%2Carmeabi-v7a%29%28nodpi%29_apkmirror.com.apk?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=72a5ba3a0b8a601e535d5525f12f8177%2F20250130%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250130T122114Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=660773bbf5e8aed0e83a3a52257115901cc63dfdd89054df3d9de40b55f3a544"
     inputfile = download_file1(APK)
     outputfile = args.output
     keyalias = args.keyalias
